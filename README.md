@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FLIP | تحدي السري</title>
+    <title>FLIP | التحدي السري</title>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -103,7 +103,6 @@
             transition: opacity 0.3s;
         }
         
-        /* Hidden Reward Section */
         .reward-section {
             display: none;
         }
@@ -194,24 +193,22 @@
 <body>
 
     <div class="container">
-        <!-- قسم اللعبة -->
         <div class="game-section" id="gameSection">
             <div class="logo-area">
-                <h1>FLIP</h1>
+                <h1>FLP</h1>
             </div>
-            <h2>تحدي البراند 🎮</h2>
-            <p>اختر الحرف المميز والأساسي في اسم البراند (حرف I) لفتح كود الخصم الحصري!</p>
+            <h2>اكتشف الحرف الناقص 🎮</h2>
+            <p>أكمل الحرف المفقود في الشعار لتفتح كود الخصم الحصري وتدخل عالمنا!</p>
             
             <div class="letters-grid">
-                <button class="letter-btn" onclick="checkLetter('F')">F</button>
-                <button class="letter-btn" onclick="checkLetter('L')">L</button>
-                <button class="letter-btn" onclick="checkLetter('I')">I</button>
-                <button class="letter-btn" onclick="checkLetter('P')">P</button>
+                <button class="letter-btn" onclick="checkChoice('!')">!</button>
+                <button class="letter-btn" onclick="checkChoice('$')">$</button>
+                <button class="letter-btn" onclick="checkChoice('٪')">٪</button>
+                <button class="letter-btn" onclick="checkChoice('I')">I</button>
             </div>
             <div class="error-msg" id="errorMsg"></div>
         </div>
 
-        <!-- قسم كود الخصم (يظهر بعد الفوز) -->
         <div class="reward-section" id="rewardSection">
             <div class="logo-area">
                 <h1>FL<span>!</span>P</h1>
@@ -249,14 +246,13 @@
     </div>
 
     <script>
-        function checkLetter(letter) {
+        function checkChoice(choice) {
             const errorMsg = document.getElementById('errorMsg');
-            if (letter === 'I') {
-                // إخفاء اللعبة وإظهار الهدية بحركة ناعمة
+            if (choice === 'I') {
                 document.getElementById('gameSection').style.display = 'none';
                 document.getElementById('rewardSection').style.display = 'block';
             } else {
-                errorMsg.innerText = 'حرف خطأ! حاول مرة أخرى ❌';
+                errorMsg.innerText = 'اختيار خاطئ! حاول مرة أخرى ❌';
                 setTimeout(() => {
                     errorMsg.innerText = '';
                 }, 2000);
